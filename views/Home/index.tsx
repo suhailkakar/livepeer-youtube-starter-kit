@@ -5,12 +5,13 @@ import Video from "../../components/Video";
 import Header from "../../components/Header";
 import { styles } from "./styles";
 import Background from "../../components/shared/Background";
+import { MainVideo } from "../../types";
 
 export default function Home() {
-  const [videos, setVideos] = useState(data);
+  const [videos, setVideos] = useState(data.main);
 
   const handleSearch = (text: string) => {
-    const filteredVideos = data.filter((video) =>
+    const filteredVideos = data.main.filter((video) =>
       video.name.toLowerCase().includes(text.toLowerCase())
     );
     setVideos(filteredVideos);
@@ -18,12 +19,10 @@ export default function Home() {
 
   const renderItem = useMemo(
     () =>
-      ({ item }) =>
+      ({ item }: { item: MainVideo }) =>
         <Video item={item} />,
     []
   );
-
-  const keyExtractor = useMemo(() => (item) => item.id, []);
 
   const renderHeader = useMemo(
     () => <Header onChangeText={handleSearch} />,
@@ -33,9 +32,8 @@ export default function Home() {
   return (
     <Background>
       <FlatList
-        data={videos}
+        data={videos.main}
         renderItem={renderItem}
-        keyExtractor={keyExtractor}
         contentContainerStyle={styles.container}
         ListHeaderComponent={renderHeader}
       />

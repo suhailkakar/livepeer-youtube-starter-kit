@@ -3,15 +3,17 @@ import React from "react";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import moment from "moment";
+import { MainVideo } from "../../types";
 
-export default function Video({ item }: { item: any }) {
+export default function Video({ item }: { item: MainVideo }) {
   const { navigate } = useNavigation();
 
   const navigateToVideo = () => {
-    navigate<any>("Video", {
+    navigate("Video", {
       item,
     });
   };
+
   return (
     <Pressable onPress={navigateToVideo} style={styles.container}>
       <Image

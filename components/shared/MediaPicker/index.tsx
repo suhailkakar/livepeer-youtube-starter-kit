@@ -1,30 +1,35 @@
 import { View, Text, Pressable } from "react-native";
 import React, { useState } from "react";
 import { styles } from "./styles";
-import * as ImagePicker from "expo-image-picker";
+import {
+  ImagePickerAsset,
+  MediaTypeOptions,
+  launchImageLibraryAsync,
+  ImagePickerResult,
+  requestMediaLibraryPermissionsAsync,
+} from "expo-image-picker";
+
 import { Video } from "expo-av";
 
 export default function MediaPicker({
   onChange,
 }: {
-  onChange: (result: ImagePicker.ImagePickerResult) => void;
+  onChange: (result: ImagePickerResult) => void;
 }) {
-  const [video, setVideo] = useState<ImagePicker.ImagePickerResult>();
+  const [video, setVideo] = useState<ImagePickerResult>();
 
   const pickVideo = async () => {
     if (!video) {
-      const { status } =
-        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      const { status } = await requestMediaLibraryPermissionsAsync();
       if (status !== "granted") {
         alert("Sorry, we need camera roll permissions to make this work!");
         return;
       }
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Videos,
-        allowsEditing: false,
-        aspect: [4, 3],
-        quality: 1,
+      const result = await launchImageLibraryAsync({
+        mediaTypes: MediaTypeOptions.Videos,
+        allowsEditing: true,
       });
+
       if (!result.cancelled) {
         onChange(result);
         setVideo(result);
@@ -34,14 +39,10 @@ export default function MediaPicker({
 
   return (
     <Pressable onPress={pickVideo} style={styles.container}>
-      {video?.uri ? (
+      {video?.assets ? (
         <Video
-          source={{ uri: video?.uri }}
-          rate={1.0}
-          volume={1.0}
-          isMuted={false}
+          source={{ uri: video.assets[0].uri }}
           shouldPlay
-          useNativeControls={true}
           isLooping
           style={styles.video}
         />

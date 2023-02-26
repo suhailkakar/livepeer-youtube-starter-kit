@@ -9,8 +9,17 @@ import moment from "moment";
 import { StatusBar } from "expo-status-bar";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { MainVideo } from "../../types";
 
-export default function Video({ route }: { route: any }) {
+export default function Video({
+  route,
+}: {
+  route: {
+    params: {
+      item: MainVideo;
+    };
+  };
+}) {
   const item = route.params.item;
   const navigation = useNavigation();
   return (

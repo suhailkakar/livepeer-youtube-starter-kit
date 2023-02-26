@@ -1,20 +1,38 @@
-[
-	{
-		"name": "Big Buck Bunny",
-		"image": "https://i.ytimg.com/vi/aqz-KE-bpKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHp9W1WijcZlxVt2CwU1wCT2Aejw",
-		"channelName": "Blender Foundation",
-		"channelImage": "https://yt3.ggpht.com/ytc/AMLnZu-1MGeaE5pvjNQytK6_O9fjbUEcr2xmmM1XBbOHGQ=s900-c-k-c0x00ffffff-no-rj",
-		"createdAt": "2019-01-01T00:00:00.000Z",
-		"views": 14000,
-		"playbackId": "f618b2fiuduopzrl"
-	},
-	{
-		"name": "Messi Crazy Solo vs Croatia",
-		"image": "https://i.ytimg.com/vi/k6rc4CS1TTA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCA1o0a9uiafwNr1ZFCzsHsdJZbfA",
-		"channelName": "FIFA WorldCup 2022",
-		"channelImage": "https://i.ytimg.com/vi/5k3siHuJKOU/maxresdefault.jpg",
-		"createdAt": "2022-12-13T00:00:00.000Z",
-		"views": 190000,
-		"playbackId": "0a0crb17zfzprsvf"
-	},
-]
+{
+	"main": [
+		{
+			"id": 1,
+			"name": "Big Buck Bunny",
+			"image": "https://i.ytimg.com/vi/aqz-KE-bpKQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHp9W1WijcZlxVt2CwU1wCT2Aejw",
+			"channelName": "Blender Foundation",
+			"channelImage": "https://yt3.ggpht.com/ytc/AMLnZu-1MGeaE5pvjNQytK6_O9fjbUEcr2xmmM1XBbOHGQ=s900-c-k-c0x00ffffff-no-rj",
+			"createdAt": "2019-01-01T00:00:00.000Z",
+			"views": 14000,
+			"playbackId": "f618b2fiuduopzrl"
+		},
+		{
+			"id": 2,
+			"name": "Messi Crazy Solo vs Croatia",
+			"image": "https://i.ytimg.com/vi/k6rc4CS1TTA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCA1o0a9uiafwNr1ZFCzsHsdJZbfA",
+			"channelName": "FIFA WorldCup 2022",
+			"channelImage": "https://i.ytimg.com/vi/5k3siHuJKOU/maxresdefault.jpg",
+			"createdAt": "2022-12-13T00:00:00.000Z",
+			"views": 190000,
+			"playbackId": "0a0crb17zfzprsvf"
+		}
+	],
+	"shorts": [
+		{
+			"id": 3,
+			"name": "Friends | Chandler or Dog",
+			"channelName": "ABC Channel",
+			"playbackId": "2736uz61azcr8ttb"
+		},
+		{
+			"id": 4,
+			"name": "Messi final goal vs France",
+			"channelName": "XYZ Channel",
+			"playbackId": "4a6bmdzisoxk80od"
+		}
+	]
+}

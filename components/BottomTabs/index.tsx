@@ -1,6 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Upload, Studio, Docs } from "../../views";
+import { Home, Upload, Shorts } from "../../views";
 import * as WebBrowser from "expo-web-browser";
 
 const Tab = createBottomTabNavigator();
@@ -38,6 +38,20 @@ function BottomTabs() {
         }}
       />
       <Tab.Screen
+        name="Shorts"
+        component={Shorts}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Feather
+              name="play-circle"
+              size={focused ? 28 : 24}
+              color={focused ? "#2ECC86" : "#929292"}
+              filled={focused}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Upload"
         component={Upload}
         options={{
@@ -51,29 +65,10 @@ function BottomTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Studio"
-        component={Studio}
-        listeners={({ navigation }) => ({
-          tabPress: (e) => {
-            e.preventDefault();
-            openWebBrowser("https://livepeer.studio");
-          },
-        })}
-        options={{
-          tabBarIcon: ({ focused, color, size }) => (
-            <Feather
-              name="globe"
-              size={focused ? 26 : 24}
-              color={focused ? "#2ECC86" : "#929292"}
-              filled={focused}
-            />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Docs"
-        component={Docs}
+        component={() => null}
         listeners={({ navigation }) => ({
           tabPress: (e) => {
             e.preventDefault();
